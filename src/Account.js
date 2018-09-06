@@ -13,17 +13,21 @@ export default class Account extends Component {
 
   handleTransactionClick(e) {
     e.preventDefault();
-    let isDeposit = true;
     if (isNaN(this.refs.amount.value) || this.refs.amount.value < 0) {
       console.log('Not a number');
     }
-    else if (e.target.value == 'Withdraw') {
-      let amount = -this.refs.amount.value;
-      let newBalance = this.state.balance + amount;
-      this.setState({
-        balance: newBalance
-      });
-      this.refs.amount.value = '';
+    else if (e.target.value === 'Withdraw') {
+      if (this.refs.amount.value > this.state.balance) {
+        console.log('No credit here!');
+      }
+      else {
+        let amount = -this.refs.amount.value;
+        let newBalance = this.state.balance + amount;
+        this.setState({
+          balance: newBalance
+        });
+        this.refs.amount.value = '';
+      }
     }
     else {
       let amount = +this.refs.amount.value;
