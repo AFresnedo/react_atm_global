@@ -42,3 +42,7 @@ body {
   background-color: #F52F4F;
   color: #FFFFFF;
 }
+
+.enterAmt {
+  width: 120px;
+}

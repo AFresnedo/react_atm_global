@@ -49,7 +49,7 @@ export default class Account extends Component {
       <div className='account'>
         <h2>{this.props.name}</h2>
         <div className={balanceClass}>${this.state.balance}</div>
-        <input type="text" placeholder="enter an amount" ref="amount" />
+        <input className="enterAmt" type="text" placeholder="enter an amount" ref="amount" />
         <input type="button" value="Deposit" onClick={this.handleTransactionClick} />
         <input type="button" value="Withdraw" onClick={this.handleTransactionClick} />
       </div>
